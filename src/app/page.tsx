@@ -18,8 +18,8 @@ export default function Home() {
   const [baseUrl, setBaseUrl] = useState("");
 
   useEffect(() => {
-    // Set base URL for displaying the short link (e.g., http://localhost:3000)
-    setBaseUrl(window.location.origin);
+    // 화면에 보여질 기본 도메인을 설정합니다.
+    setBaseUrl("https://ttori0912.edu");
     fetchUrls();
   }, []);
 

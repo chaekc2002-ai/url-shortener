@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap');
+
+:root {
+  --background: #eef2f6;
+  --text-main: #2d3748;
+  --clay-bg: #ffffff;
+  
+  /* Claymorphism Box Shadows */
+  --clay-shadow-drop: 8px 8px 16px rgba(166, 180, 200, 0.4);
+  --clay-shadow-inner: inset -5px -5px 15px rgba(166, 180, 200, 0.2), inset 5px 5px 15px rgba(255, 255, 255, 1);
+  --clay-box: var(--clay-shadow-drop), var(--clay-shadow-inner);
+  
+  --accent-color: #7b9fed;
+  --accent-hover: #6a8ce0;
+  --accent-clay-box: 6px 6px 12px rgba(123, 159, 237, 0.3), inset -4px -4px 10px rgba(0, 0, 0, 0.1), inset 4px 4px 10px rgba(255, 255, 255, 0.5);
+  
+  --danger-color: #ff8e8e;
+  --danger-hover: #fa7b7b;
+  --danger-clay-box: 6px 6px 12px rgba(255, 142, 142, 0.3), inset -4px -4px 10px rgba(0, 0, 0, 0.1), inset 4px 4px 10px rgba(255, 255, 255, 0.5);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text-main);
+  font-family: 'Outfit', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 1rem;
+}
+
+/* Typography */
+h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  color: var(--text-main);
+  text-align: center;
+  letter-spacing: -1px;
+}
+
+p.subtitle {
+  text-align: center;
+  color: #718096;
+  margin-bottom: 2.5rem;
+  font-size: 1.1rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* Layout */
+.container {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Clay Card */
+.clay-card {
+  background-color: var(--clay-bg);
+  border-radius: 32px;
+  box-shadow: var(--clay-box);
+  padding: 2.5rem;
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.clay-card:hover {
+  transform: translateY(-2px);
+}
+
+/* Clay Inputs */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #4a5568;
+  font-size: 0.95rem;
+}
+
+.clay-input {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  background-color: #f7fafc;
+  box-shadow: inset 4px 4px 8px rgba(166, 180, 200, 0.3), inset -4px -4px 8px rgba(255, 255, 255, 1);
+  color: var(--text-main);
+  font-size: 1rem;
+  font-family: 'Outfit', sans-serif;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.clay-input:focus {
+  border-color: rgba(123, 159, 237, 0.4);
+  background-color: #ffffff;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #f7fafc;
+  border-radius: 20px;
+  box-shadow: inset 4px 4px 8px rgba(166, 180, 200, 0.3), inset -4px -4px 8px rgba(255, 255, 255, 1);
+  padding: 0 1.5rem;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.input-group:focus-within {
+  border-color: rgba(123, 159, 237, 0.4);
+  background-color: #ffffff;
+}
+
+.input-group .prefix {
+  color: #a0aec0;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.input-group .clay-input {
+  box-shadow: none;
+  background-color: transparent;
+  padding-left: 0.5rem;
+  margin-bottom: 0;
+}
+.input-group .clay-input:focus {
+  border-color: transparent;
+}
+
+/* Clay Buttons */
+.clay-btn {
+  padding: 1.2rem 2rem;
+  border: none;
+  border-radius: 20px;
+  background-color: var(--accent-color);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: 'Outfit', sans-serif;
+  cursor: pointer;
+  box-shadow: var(--accent-clay-box);
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.clay-btn:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 8px 8px 16px rgba(123, 159, 237, 0.4), inset -4px -4px 10px rgba(0, 0, 0, 0.1), inset 4px 4px 10px rgba(255, 255, 255, 0.5);
+}
+
+.clay-btn:active {
+  transform: translateY(2px);
+  box-shadow: 2px 2px 8px rgba(123, 159, 237, 0.4), inset 4px 4px 10px rgba(0, 0, 0, 0.1), inset -4px -4px 10px rgba(255, 255, 255, 0.5);
+}
+
+.clay-btn.danger {
+  background-color: var(--danger-color);
+  box-shadow: var(--danger-clay-box);
+}
+
+.clay-btn.danger:hover {
+  background-color: var(--danger-hover);
+  box-shadow: 8px 8px 16px rgba(255, 142, 142, 0.4), inset -4px -4px 10px rgba(0, 0, 0, 0.1), inset 4px 4px 10px rgba(255, 255, 255, 0.5);
+}
+.clay-btn.danger:active {
+  box-shadow: 2px 2px 8px rgba(255, 142, 142, 0.4), inset 4px 4px 10px rgba(0, 0, 0, 0.1), inset -4px -4px 10px rgba(255, 255, 255, 0.5);
+}
+
+.small-btn {
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+  width: auto;
+  border-radius: 12px;
+}
+
+/* List Items */
+.url-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.clay-list-item {
+  background-color: var(--clay-bg);
+  border-radius: 24px;
+  box-shadow: var(--clay-box);
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.clay-list-item:hover {
+  transform: scale(1.02);
+}
+
+.clay-list-item .urls {
+  flex: 1;
+  overflow: hidden;
+}
+
+.clay-list-item .original-url {
+  font-size: 0.9rem;
+  color: #718096;
+  margin-bottom: 0.5rem;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.clay-list-item .short-url-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.clay-list-item .short-url {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+.clay-list-item .short-url:hover {
+  text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.loading-spinner {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 3px solid rgba(255,255,255,0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
